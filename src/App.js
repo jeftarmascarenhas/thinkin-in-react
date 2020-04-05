@@ -1,25 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import { shoes } from "./mocks";
+import NavigationMenu from "./components/NavigationMenu";
+import FilteredProduct from "./components/FilteredProduct";
+
+// render navigation header [ok]
+// render navigation menu [ok]
+// render filtered product [] receive shoesData
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1 className="logo">Nike</h1>
+      <NavigationMenu />
+      <FilteredProduct products={shoes} />
+    </>
   );
 }
 

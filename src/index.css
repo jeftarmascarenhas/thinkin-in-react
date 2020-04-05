@@ -1,13 +1,118 @@
-body {
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+img {
+  max-width: 100%;
+}
+
+figure,
+nav,
+figcaption {
+  display: block;
+}
+
+.logo {
+  font-family: 3rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.featered {
+  background-color: rgb(247, 247, 247);
+}
+
+.nav {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: ceter;
+  margin-bottom: 1.5rem;
+}
+
+.nav a {
+  margin-right: 0.8rem;
+  margin-left: 0.8rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: #000;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.search-bar {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+.search-bar input[type="text"] {
+  border-radius: 0.3rem;
+  border: 1px solid #ccc;
+  padding: 0.8rem;
+  min-height: 4.6rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  width: 100%;
+}
+
+.search-bar .checkbox-box {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  margin-top: 1rem;
+}
+
+.search-bar .checkbox-box input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.product-grid {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.product-grid-category {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+  grid-gap: 1rem;
+}
+.product-grid-category__item figcaption h2 {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: #000;
+  grid-area: "product-grid__item";
+}
+
+.product-grid-category__item figcaption h2 > span {
+  color: tomato;
+}
+
+.category {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  color: orange;
+  font-weight: 400;
 }
