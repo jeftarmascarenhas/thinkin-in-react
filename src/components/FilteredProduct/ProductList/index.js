@@ -7,27 +7,39 @@ import PropTypes from "prop-types";
 import ProductCategory from "./ProductCategory";
 import ProductItem from "./ProductItem";
 
+const stringLower = (value = "") => value.toLowerCase();
+
 const ProductList = ({ products, inStockOnly, filterText }) => {
   const rows = [];
 
   let lastCategory = null;
   products.forEach((product) => {
-    if (product.name.indexOf(filterText) === -1) {
+    if (stringLower(product.name).indexOf(stringLower(filterText)) === -1) {
       return false;
     }
     if (inStockOnly && !product.stocked) {
       return false;
     }
-    if (product.category !== lastCategory) {
-      rows.push(
-        <ProductCategory title={product.category} key={product.category} />
-      );
-    }
-    rows.push(<ProductItem product={product} key={product.id} />);
+
+    const category =
+      product.category !== lastCategory ? (
+        <ProductCategory title={product.category} />
+      ) : null;
+
+    rows.push(
+      <div key={product.id}>
+        {category}
+        <ProductItem product={product} />
+      </div>
+    );
     lastCategory = product.category;
   });
 
-  return <div className="product-grid">{rows}</div>;
+  return (
+    <div className="product-grid">
+      <div>{rows}</div>
+    </div>
+  );
 };
 
 ProductList.propTypes = {

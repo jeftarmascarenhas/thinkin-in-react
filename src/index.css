@@ -95,7 +95,7 @@ figcaption {
 
 .product-grid-category {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, auto));
 
   grid-gap: 1rem;
 }
@@ -108,6 +108,10 @@ figcaption {
 
 .product-grid-category__item figcaption h2 > span {
   color: tomato;
+}
+
+.img-small {
+  max-width: 340px;
 }
 
 .category {

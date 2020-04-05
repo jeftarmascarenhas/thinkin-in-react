@@ -3,7 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const ProductCategory = ({ title }) => {
-  return <h3 className="category">Category: {title}</h3>;
+  return title && <h3 className="category">Category: {title}</h3>;
 };
 
 ProductCategory.propTypes = {
