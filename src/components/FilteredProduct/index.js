@@ -2,17 +2,36 @@
 // render search bar [x]
 // render product grid [x]
 
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import SearchBar from "./SearchBar";
 import ProductList from "./ProductList";
 
 const FilteredProduct = ({ products }) => {
+  const [inStockOnly, setInStockOnly] = useState(false);
+  const [filterText, setFilterText] = useState("");
+
+  const handleInStockOnly = (inStockOnlyChange) => {
+    setInStockOnly(inStockOnlyChange);
+  };
+  const handleFilterText = (filterTextChange) => {
+    setFilterText(filterTextChange);
+  };
+
   return (
     <>
-      <SearchBar />
-      <ProductList products={products} />
+      <SearchBar
+        inStockOnly={inStockOnly}
+        filterText={filterText}
+        onFilterTextChange={handleFilterText}
+        onInStockChange={handleInStockOnly}
+      />
+      <ProductList
+        products={products}
+        inStockOnly={inStockOnly}
+        filterText={filterText}
+      />
     </>
   );
 };
